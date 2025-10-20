@@ -1,0 +1,12 @@
+{"timestamp":"2025-10-20T17:29:37.769940Z","level":"info","event":"DAG bundles loaded: dags-folder, example_dags","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager","filename":"manager.py","lineno":179}
+{"timestamp":"2025-10-20T17:29:37.770282Z","level":"info","event":"Filling up the DagBag from /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/standard/example_bash_operator.py","logger":"airflow.models.dagbag.DagBag","filename":"dagbag.py","lineno":593}
+{"timestamp":"2025-10-20T17:29:38.012507Z","level":"info","event":"Task instance is in running state","logger":"task.stdout"}
+{"timestamp":"2025-10-20T17:29:38.012617Z","level":"info","event":" Previous state of the Task instance: TaskInstanceState.QUEUED","logger":"task.stdout"}
+{"timestamp":"2025-10-20T17:29:38.012917Z","level":"info","event":"Current task name:this_will_skip","logger":"task.stdout"}
+{"timestamp":"2025-10-20T17:29:38.012968Z","level":"info","event":"Dag name:example_bash_operator","logger":"task.stdout"}
+{"timestamp":"2025-10-20T17:29:38.013311Z","level":"info","event":"Tmp dir root location: /tmp","logger":"airflow.task.hooks.airflow.providers.standard.hooks.subprocess.SubprocessHook","filename":"subprocess.py","lineno":78}
+{"timestamp":"2025-10-20T17:29:38.014074Z","level":"info","event":"Running command: ['/usr/bin/bash', '-c', 'echo \"hello world\"; exit 99;']","logger":"airflow.task.hooks.airflow.providers.standard.hooks.subprocess.SubprocessHook","filename":"subprocess.py","lineno":88}
+{"timestamp":"2025-10-20T17:29:38.018335Z","level":"info","event":"Output:","logger":"airflow.task.hooks.airflow.providers.standard.hooks.subprocess.SubprocessHook","filename":"subprocess.py","lineno":99}
+{"timestamp":"2025-10-20T17:29:38.019063Z","level":"info","event":"hello world","logger":"airflow.task.hooks.airflow.providers.standard.hooks.subprocess.SubprocessHook","filename":"subprocess.py","lineno":106}
+{"timestamp":"2025-10-20T17:29:38.019154Z","level":"info","event":"Command exited with return code 99","logger":"airflow.task.hooks.airflow.providers.standard.hooks.subprocess.SubprocessHook","filename":"subprocess.py","lineno":110}
+{"timestamp":"2025-10-20T17:29:38.019453Z","level":"info","event":"Skipping task.","reason":"Bash command returned exit code 99. Skipping.","logger":"task","filename":"task_runner.py","lineno":945}
