@@ -1,7 +1,7 @@
 from datetime import datetime, timedelta
 
 from airflow import DAG
-from airflow.operators.bash import BashOperator
+from airflow.providers.standard.operators.bash import BashOperator
 
 
 default_args = {
@@ -15,7 +15,7 @@ with DAG(
     default_args=default_args,
     description='This is our first DAG',
     start_date=datetime(2025, 10, 20, 2),
-    schedule_interval='@daily'
+    schedule='@daily'
 ) as dag:
     task1 = BashOperator(
         task_id='first_task',
