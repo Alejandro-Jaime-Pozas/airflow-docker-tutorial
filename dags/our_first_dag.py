@@ -11,7 +11,7 @@ default_args = {
 }
 
 with DAG(
-    dag_id='our_first_dag',
+    dag_id='our_first_dag_v3',
     default_args=default_args,
     description='This is our first DAG',
     start_date=datetime(2025, 10, 20, 2),
@@ -22,4 +22,14 @@ with DAG(
         bash_command='echo hello world, this is the first task!',
     )
 
-    task1
+    task2 = BashOperator(
+        task_id='second_task',
+        bash_command='echo hello world, this is the second task!',
+    )
+
+    task3 = BashOperator(
+        task_id='third_task',
+        bash_command='echo hello world, this is the third task and running parallel to task2!',
+    )
+
+    task1 >> [task2, task3]
