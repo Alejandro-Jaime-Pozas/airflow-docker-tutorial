@@ -1,17 +1,21 @@
 from datetime import datetime, timedelta
 
+from utils import default_args
+
+
 from airflow import DAG
 from airflow.providers.standard.operators.bash import BashOperator
 
 
-default_args = {
-    'owner': 'alex',
-    'retries': 5,
-    'retry_delay': timedelta(minutes=2)
-}
+
+# default_args = {
+#     'owner': 'alex',
+#     'retries': 5,
+#     'retry_delay': timedelta(minutes=2)
+# }
 
 with DAG(
-    dag_id='our_first_dag_v3',
+    dag_id='our_first_dag_v04',
     default_args=default_args,
     description='This is our first DAG',
     start_date=datetime(2025, 10, 20, 2),
